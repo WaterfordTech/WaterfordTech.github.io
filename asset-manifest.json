@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/WaterfordTech/WaterfordTech.github.io/static/css/main.5be3cb6c.chunk.css",
-    "main.js": "/WaterfordTech/WaterfordTech.github.io/static/js/main.f7002afc.chunk.js",
-    "main.js.map": "/WaterfordTech/WaterfordTech.github.io/static/js/main.f7002afc.chunk.js.map",
-    "runtime-main.js": "/WaterfordTech/WaterfordTech.github.io/static/js/runtime-main.b8c7cd9d.js",
-    "runtime-main.js.map": "/WaterfordTech/WaterfordTech.github.io/static/js/runtime-main.b8c7cd9d.js.map",
-    "static/js/2.45c2d83c.chunk.js": "/WaterfordTech/WaterfordTech.github.io/static/js/2.45c2d83c.chunk.js",
-    "static/js/2.45c2d83c.chunk.js.map": "/WaterfordTech/WaterfordTech.github.io/static/js/2.45c2d83c.chunk.js.map",
-    "index.html": "/WaterfordTech/WaterfordTech.github.io/index.html",
-    "precache-manifest.06b2ddf6de62fda94e996d778290e7cf.js": "/WaterfordTech/WaterfordTech.github.io/precache-manifest.06b2ddf6de62fda94e996d778290e7cf.js",
-    "service-worker.js": "/WaterfordTech/WaterfordTech.github.io/service-worker.js",
-    "static/css/main.5be3cb6c.chunk.css.map": "/WaterfordTech/WaterfordTech.github.io/static/css/main.5be3cb6c.chunk.css.map",
-    "static/js/2.45c2d83c.chunk.js.LICENSE.txt": "/WaterfordTech/WaterfordTech.github.io/static/js/2.45c2d83c.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/WaterfordTech/WaterfordTech.github.io/static/media/logo.5d5d9eef.svg"
+    "main.css": "/waterfordtech.org/static/css/main.5be3cb6c.chunk.css",
+    "main.js": "/waterfordtech.org/static/js/main.f7002afc.chunk.js",
+    "main.js.map": "/waterfordtech.org/static/js/main.f7002afc.chunk.js.map",
+    "runtime-main.js": "/waterfordtech.org/static/js/runtime-main.d87c2612.js",
+    "runtime-main.js.map": "/waterfordtech.org/static/js/runtime-main.d87c2612.js.map",
+    "static/js/2.45c2d83c.chunk.js": "/waterfordtech.org/static/js/2.45c2d83c.chunk.js",
+    "static/js/2.45c2d83c.chunk.js.map": "/waterfordtech.org/static/js/2.45c2d83c.chunk.js.map",
+    "index.html": "/waterfordtech.org/index.html",
+    "precache-manifest.5c989163cda5d07cc963b65a5df1b25e.js": "/waterfordtech.org/precache-manifest.5c989163cda5d07cc963b65a5df1b25e.js",
+    "service-worker.js": "/waterfordtech.org/service-worker.js",
+    "static/css/main.5be3cb6c.chunk.css.map": "/waterfordtech.org/static/css/main.5be3cb6c.chunk.css.map",
+    "static/js/2.45c2d83c.chunk.js.LICENSE.txt": "/waterfordtech.org/static/js/2.45c2d83c.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/waterfordtech.org/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b8c7cd9d.js",
+    "static/js/runtime-main.d87c2612.js",
     "static/js/2.45c2d83c.chunk.js",
     "static/css/main.5be3cb6c.chunk.css",
     "static/js/main.f7002afc.chunk.js"
