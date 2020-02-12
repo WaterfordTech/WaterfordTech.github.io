@@ -10,13 +10,12 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
         with:
-          hugo-version: '0.62.2'
-          # extended: true
-      - name: Build
-        run: hugo --minify
+          node-version: 12.x
+      - run: npm install
+      - run: npm run build --if-present
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

@@ -1,0 +1,23 @@
+{
+  "name": "waterfordtech.github.io",
+  "version": "1.0.0",
+  "description": "metalsmith site",
+  "main": "build.js",
+  "scripts": {
+    "build": "metalsmith",
+    "start": "metalsmith; metalsmith-start -p 4000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WaterfordTech/WaterfordTech.github.io.git"
+  },
+  "keywords": [
+    "metalsmith"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WaterfordTech/WaterfordTech.github.io/issues"
+  },
+  "homepage": "https://github.com/WaterfordTech/WaterfordTech.github.io#readme"
+}
