@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/waterfordtech.org/precache-manifest.3e2514c0f5ba2aca6fa2a1e1686e809b.js"
+  "/waterfordtech.org/precache-manifest.08cc8d61f8dca299b7a2dae8a7906229.js"
 );
 
 self.addEventListener('message', (event) => {
