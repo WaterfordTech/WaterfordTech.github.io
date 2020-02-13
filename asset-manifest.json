@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/waterfordtech.org/static/css/main.d1b05096.chunk.css",
-    "main.js": "/waterfordtech.org/static/js/main.0006ba18.chunk.js",
-    "main.js.map": "/waterfordtech.org/static/js/main.0006ba18.chunk.js.map",
-    "runtime-main.js": "/waterfordtech.org/static/js/runtime-main.d87c2612.js",
-    "runtime-main.js.map": "/waterfordtech.org/static/js/runtime-main.d87c2612.js.map",
-    "static/js/2.45c2d83c.chunk.js": "/waterfordtech.org/static/js/2.45c2d83c.chunk.js",
-    "static/js/2.45c2d83c.chunk.js.map": "/waterfordtech.org/static/js/2.45c2d83c.chunk.js.map",
-    "index.html": "/waterfordtech.org/index.html",
-    "precache-manifest.08cc8d61f8dca299b7a2dae8a7906229.js": "/waterfordtech.org/precache-manifest.08cc8d61f8dca299b7a2dae8a7906229.js",
-    "service-worker.js": "/waterfordtech.org/service-worker.js",
-    "static/css/main.d1b05096.chunk.css.map": "/waterfordtech.org/static/css/main.d1b05096.chunk.css.map",
-    "static/js/2.45c2d83c.chunk.js.LICENSE.txt": "/waterfordtech.org/static/js/2.45c2d83c.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/waterfordtech.org/static/media/logo.5d5d9eef.svg"
+    "main.css": "/static/css/main.d1b05096.chunk.css",
+    "main.js": "/static/js/main.2c0b1d03.chunk.js",
+    "main.js.map": "/static/js/main.2c0b1d03.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.bbaa1b7d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.bbaa1b7d.js.map",
+    "static/js/2.45c2d83c.chunk.js": "/static/js/2.45c2d83c.chunk.js",
+    "static/js/2.45c2d83c.chunk.js.map": "/static/js/2.45c2d83c.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.325027b2513168f2d458349c5f9e8304.js": "/precache-manifest.325027b2513168f2d458349c5f9e8304.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.45c2d83c.chunk.js.LICENSE.txt": "/static/js/2.45c2d83c.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d87c2612.js",
+    "static/js/runtime-main.bbaa1b7d.js",
     "static/js/2.45c2d83c.chunk.js",
     "static/css/main.d1b05096.chunk.css",
-    "static/js/main.0006ba18.chunk.js"
+    "static/js/main.2c0b1d03.chunk.js"
   ]
 }
