@@ -1,11 +1,36 @@
-import React, { useState } from 'react';
-import styled, { keyframes } from 'styled-components'
+import React from 'react';
+import styled, { createGlobalStyle } from 'styled-components'
 // import logo from './logo.svg';
 import { Github } from 'styled-icons/fa-brands'
 import { Slack } from 'styled-icons/boxicons-logos'
-import {Spinner3 as Spinner} from 'styled-icons/evil'
 import landingSplash from './landing-splash.jpeg'
 import vertLandingSplash from './landing-splash-vertical.jpeg'
+import Form from './components/SlackSignupForm'
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 20px;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+  a {
+    color: palevioletred;
+
+    &:hover {
+      color: mediumvioletred;
+    }
+  }
+`
 
 const LandingContainer = styled.div`
   position: relative;
@@ -15,18 +40,9 @@ const LandingContainer = styled.div`
   justify-content: start;
   min-height: 100vh;
   overflow: hidden;
-
-  font-size: 1.5rem;
-  text-align: center;
   color: white;
 
-  & a {
-    color: palevioletred;
-
-    &:hover {
-      color: mediumvioletred;
-    }
-  }
+  text-align: center;
 
   &::before {
     content: "";
@@ -34,15 +50,13 @@ const LandingContainer = styled.div`
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    filter: blur(3px);
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${landingSplash}") no-repeat center fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("${landingSplash}") no-repeat center fixed;
 
     @media (max-width: 900px) {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${vertLandingSplash}") no-repeat center fixed;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url("${vertLandingSplash}") no-repeat center fixed;
     }
     background-color: #111;
     background-attachment: fixed;
-    transform: scale(1.03); 
   }
 `
 
@@ -50,8 +64,19 @@ const HeaderContainer = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-content: center;
   top: 0; left: 0;
   padding: 2rem;
+`
+
+const HeaderLinks = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  & a {
+    margin: 1rem;
+  }
 `
 
 const CTAContainer = styled.div`
@@ -81,56 +106,6 @@ const FormContainer = styled.div`
   }
 `
 
-const Button = styled.button`
-  background: white;
-  border-radius: 3px;
-  border: 2px solid palevioletred;
-  color: palevioletred;
-  margin: 0 1rem;
-  padding: 0.25rem 1rem;
-  font-size: 1.5rem;
-  min-width: 100px;
-
-  &:hover {
-    border: 2px solid mediumvioletred;
-    color: mediumvioletred;
-    shadow: none;
-  }
-
-  & > svg {
-    height: 1.5rem; width: auto;
-  }
-`
-
-const Input = styled.input`
-  background: white;
-  border-radius: 3px;
-  border: 2px solid palevioletred;
-  color: palevioletred;
-  margin: 0 1rem;
-  padding: 0.25rem 1rem;
-  font-size: 1.5rem;
-
-  &:hover, &:focus {
-    border: 2px solid mediumvioletred;
-    color: mediumvioletred;
-    shadow: none;
-  }
-`
-
-const spin = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`
-
-const SpinningIcon = styled(Spinner)`
-  animation: 2s linear ${spin} infinite;
-`
-
 const GithubLogo = styled(Github)`
   color: white;
   &:hover {
@@ -138,91 +113,64 @@ const GithubLogo = styled(Github)`
   }
 `
 
-function Form () {
-  const [submitted, setSubmitted] = useState(false)
-  const [submitting, setSubmitting] = useState(false)
-  const [error, setError] = useState(false)
-  const [timeout, setTimeoutFn] = useState(null)
+const DetailsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: stretch;
+`
 
-  const onSubmit = (e) => {
-    e.preventDefault()
-    const data = new FormData(e.target);
+const ContentContainer = styled.div`
+  max-width: 35ch;
+  padding: 1rem;
+  border: 1px solid lightgray;
+  margin: 1rem;
+  border-radius: 5px;
+`
 
-    if (submitting || !(data.get('emailAddress') ) || !(data.get('emailAddress')).includes('@')) {
-      return;
-    }
-
-    if (timeout) {
-      clearTimeout(timeout)
-      setTimeoutFn(null)
-    }
-
-    setError(false)
-    setSubmitted(false)
-    setSubmitting(true)
-
-
-    fetch('//docs.google.com/forms/d/e/1FAIpQLSfSOuBAy3L5VR8TRsMSwIZVPcZYHLOIGnh2QTCt_UhEliSFEg/formResponse', {
-      method: 'POST',
-      body: data,
-      mode: 'no-cors'
-    }).then((res) => {
-      setSubmitting(false)
-      if (res.ok || res.status === 0) {
-        setSubmitted(true)
-      } else {
-        setError('There was an issue submitting. Please try again.')
-      }
-      const t = setTimeout(() => {
-          setSubmitted(false)
-          setError(false)
-          setTimeoutFn(null)
-      }, 3000)
-      setTimeoutFn(t)
-    }).catch((e) => {
-      setSubmitting(false)
-      setError('There was an issue submitting. Please try again.')
-      const t = setTimeout(() => {
-          setSubmitted(false)
-          setError(false)
-          setTimeoutFn(null)
-      }, 3000)
-      setTimeoutFn(t)
-    });
+const EventsCalendar =styled.div`
+  padding: 1rem;
+  & iframe {
+    overflow: hidden;
+    pointer-events:none;
   }
+`
 
-  return <>{
-    submitted 
-      ? <h3>Submitted! Thank you. <span role='img' aria-label='bowing man'>🙇‍♂️</span></h3>
-      : <form onSubmit={onSubmit}>
-      <Input
-        autocomplete="email"
-        name="emailAddress"
-        placeholder="Your email"
-        type="email"
-      />
-      <Button
-        type="submit"
-        disabled={submitting}
-      >
-        {submitting ? <SpinningIcon /> : 'Invite Me!' }
-      </Button>
-      { error ? <p style={{color: 'red'}}>{error}</p> : '' }
-    </form>
-  }</>
-  
-}
+const EventsCalendarLarge =styled.div`
+  display: flex;
+  justify-content: center;
+  @media (max-width: 800px) {
+    display: none;
+  }
+`
+const EventsCalendarSmall =styled.div`
+  display: flex;
+  justify-content: center;
+  @media (min-width: 800px) {
+    display: none;
+  }
+`
+
+const Footer = styled.div`
+  min-height: 100px;
+  background-color: #111111;
+  padding: 1rem;
+  color: white;
+`
+
 
 function App() {
-  
-
   return (
     <>
+      <GlobalStyle />
       <LandingContainer>
         <HeaderContainer>
-          <div>
+          <HeaderLinks>
             <a href="/">Home</a>
-          </div>
+            <a href="/#about-us">About us</a>
+            <a href="/#events-calendar">Events Calendar</a>
+          </HeaderLinks>
           <div>
             <a href="//github.com/waterfordtech/waterfordtech.github.io/"><GithubLogo size="48"/></a>
           </div>
@@ -230,11 +178,57 @@ function App() {
         <CTAContainer>
           <FormContainer>
             <h1>Join the Waterford Tech Community on Slack <Slack size="48"/></h1>
-            <p>The Waterford Tech Community just got a new home! this slack was created to enable local tech community collaboration and facilitate networking in the area. Check it out!</p>
+            <p>
+              The Waterford Tech Community just got a new home!
+              This community Slack was created to enable local tech collaboration and facilitate networking in the area.
+              <br/>
+              Check it out!
+            </p>
             <Form />
           </FormContainer>
         </CTAContainer>
       </LandingContainer>
+      <DetailsContainer id="about-us">
+        <ContentContainer>
+          <h2>Who are we?</h2>
+          <p>
+            We're the Waterford Tech Community!
+            We're a mix of pressionals, students and hobbyists with a connection to the <a href="//en.wikipedia.org/wiki/Waterford">Deise</a> in the Sunny South-East of Ireland.
+            The Tech Community has grown significantly in the last few years, and needed a home to hang out online, and it's our hope that this website and open Slack community will become that home. {"<3"}
+          </p>
+        </ContentContainer>
+        <ContentContainer>
+          <h2>Who is this for?</h2>
+          <p>
+            This community is for anyone involved in tech in the Sunny South-East!
+            No matter if you're a developer, designer, PM, manager, analyst, recruiter, student, teacher or even a hobbyist, we have a home for you.
+            Waterford is home to many different companies and organisations involved with tech, and we want them represented! :)
+          </p>
+        </ContentContainer>
+        <ContentContainer>
+          <h2>Slack Information</h2>
+          <p>
+            The Slack group is open for anyone to join in.
+            It's important to keep the community welcoming and approachable, and to this end we ask people to abide by the <a href="//www.contributor-covenant.org/">Contributor Convenant Code of Conduct</a>.
+            Please contact an admin for assistance if you need any help, support or want to report an issue at any time.
+          </p>
+        </ContentContainer>
+      </DetailsContainer>
+      <hr />
+      <EventsCalendar id="events-calendar">
+        <h2>Waterford Events Calendar</h2>
+        <p>A google calendar can be found at <a href="https://calendar.google.com/calendar/embed?src=c8fpiiv7hds3aig26gb3ccpggc%40group.calendar.google.com&ctz=Europe%2FDublin">this link.</a></p>
+        <EventsCalendarLarge>
+          <iframe title="desktop calendar" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FDublin&amp;src=YzhmcGlpdjdoZHMzYWlnMjZnYjNjY3BnZ2NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23F4511E&amp;title=Waterford%20Tech%20Events&amp;showTitle=1&amp;showNav=0&amp;showDate=1&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=1&amp;showTz=1&amp;mode=MONTH" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </EventsCalendarLarge>
+        <EventsCalendarSmall>
+          <iframe title="mobile calendar" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FDublin&amp;src=YzhmcGlpdjdoZHMzYWlnMjZnYjNjY3BnZ2NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23F4511E&amp;title=Waterford%20Tech%20Events&amp;showTitle=1&amp;showNav=0&amp;showDate=1&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=1&amp;showTz=1&amp;mode=AGENDA" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </EventsCalendarSmall>
+      </EventsCalendar>
+      <Footer>
+        <h3>Waterford Tech Community</h3>
+        <p>Copyright © 2020 Waterford Tech Community</p>
+      </Footer>
     </>
   );
 }
