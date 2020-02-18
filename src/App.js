@@ -67,6 +67,13 @@ const HeaderContainer = styled.header`
   align-content: center;
   top: 0; left: 0;
   padding: 2rem;
+
+  @media (max-width: 900px) {
+    justify-content: center;
+    & div:last-child {
+      display: none;
+    }
+  }
 `
 
 const HeaderLinks = styled.div`
@@ -76,6 +83,12 @@ const HeaderLinks = styled.div`
 
   & a {
     margin: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
   }
 `
 
