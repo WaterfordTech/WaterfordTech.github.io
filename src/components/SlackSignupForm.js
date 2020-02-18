@@ -91,7 +91,7 @@ function Form () {
             setSubmitted(false)
             setError(false)
             setTimeoutFn(null)
-        }, 3000)
+        }, 10000)
         setTimeoutFn(t)
       }).catch((e) => {
         setSubmitting(false)
@@ -100,7 +100,7 @@ function Form () {
             setSubmitted(false)
             setError(false)
             setTimeoutFn(null)
-        }, 3000)
+        }, 5000)
         setTimeoutFn(t)
       });
     }
