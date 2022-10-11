@@ -185,14 +185,14 @@ function App() {
             <a href="/#events-calendar">Events Calendar</a>
           </HeaderLinks>
           <div>
-            <a href="//github.com/waterfordtech/waterfordtech.github.io/"><GithubLogo size="48"/></a>
+            <a href="https://github.com/waterfordtech/waterfordtech.github.io/"><GithubLogo size="48"/></a>
           </div>
         </HeaderContainer>
         <CTAContainer>
           <FormContainer>
             <h1>Join the Waterford Tech Community on Slack <Slack size="48"/></h1>
             <p>
-              The Waterford Tech Community just got a new home!
+              The Waterford Tech Community has an official home!
               This community Slack was created to enable local tech collaboration and facilitate networking in the area.
               <br/>
               Check it out!
@@ -206,14 +206,14 @@ function App() {
           <h2>Who are we?</h2>
           <p>
             We're the Waterford Tech Community!
-            We're a mix of pressionals, students and hobbyists with a connection to the <a href="//en.wikipedia.org/wiki/Waterford">Deise</a> in the Sunny South-East of Ireland.
+            We're a mix of professionals, students and hobbyists with a connection to the <a href="//en.wikipedia.org/wiki/Waterford">Deise</a> in the Sunny South-East of Ireland.
             The Tech Community has grown significantly in the last few years, and needed a home to hang out online, and it's our hope that this website and open Slack community will become that home. {"<3"}
           </p>
         </ContentContainer>
         <ContentContainer>
           <h2>Who is this for?</h2>
           <p>
-            This community is for anyone involved in tech in the Sunny South-East!
+            This community is for anyone involved or interested in tech in the Sunny South-East!
             No matter if you're a developer, designer, PM, manager, analyst, recruiter, student, teacher or even a hobbyist, we have a home for you.
             Waterford is home to many different companies and organisations involved with tech, and we want them represented! :)
           </p>
@@ -222,15 +222,16 @@ function App() {
           <h2>Slack Information</h2>
           <p>
             The Slack group is open for anyone to join in.
-            It's important to keep the community welcoming and approachable, and to this end we ask people to abide by the <a href="//www.contributor-covenant.org/">Contributor Convenant Code of Conduct</a>.
-            Please contact an admin for assistance if you need any help, support or want to report an issue at any time.
+            It's important to keep the community welcoming and approachable, and to this end we ask people to abide by the <a href="https://www.contributor-covenant.org/">Contributor Convenant Code of Conduct</a>.
+            Please contact an admin for assistance if you need any help, support or want to report an issue at any time. (<a href="https://slack.com/intl/en-ie/help/articles/360003534892-Browse-people-and-user-groups-in-Slack">You can find the admins/owners using the slack settings windows.</a>)
           </p>
         </ContentContainer>
       </DetailsContainer>
       <hr />
       <EventsCalendar id="events-calendar">
         <h2>Waterford Events Calendar</h2>
-        <p>A google calendar can be found at <a href="https://calendar.google.com/calendar/embed?src=c8fpiiv7hds3aig26gb3ccpggc%40group.calendar.google.com&ctz=Europe%2FDublin">this link.</a></p>
+        <p>A google calendar can be found at <a href="https://calendar.google.com/calendar/embed?src=c8fpiiv7hds3aig26gb3ccpggc%40group.calendar.google.com&ctz=Europe%2FDublin">this link.</a></p>                                                                                        
+        <p>Message the admins on slack if you want to add an event in the area.</p>
         <EventsCalendarLarge>
           <iframe title="desktop calendar" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FDublin&amp;src=YzhmcGlpdjdoZHMzYWlnMjZnYjNjY3BnZ2NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23F4511E&amp;title=Waterford%20Tech%20Events&amp;showTitle=1&amp;showNav=0&amp;showDate=1&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=1&amp;showTz=1&amp;mode=MONTH" width="800" height="600" frameborder="0" scrolling="no"></iframe>
         </EventsCalendarLarge>
@@ -240,7 +241,7 @@ function App() {
       </EventsCalendar>
       <Footer>
         <h3>Waterford Tech Community</h3>
-        <p>Copyright © 2020 Waterford Tech Community</p>
+        <p>Copyright © 2020-2022 Waterford Tech Community</p>
       </Footer>
     </>
   );
