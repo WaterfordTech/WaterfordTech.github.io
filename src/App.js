@@ -195,9 +195,9 @@ function App() {
               The Waterford Tech Community has an official home!
               This community Slack was created to enable local tech collaboration and facilitate networking in the area.
               <br/>
-              Check it out!
+              <a href="https://join.slack.com/t/waterfordtechcomm/shared_invite/zt-1j7a9hqg4-yt9wQNkJpHWW28aktOLaTA"> Use this link to join instantly!</a>
             </p>
-            <Form />
+            {/* <Form /> */}
           </FormContainer>
         </CTAContainer>
       </LandingContainer>
